@@ -1,0 +1,34 @@
+﻿@model IEnumerable<codeFirstjoinns.Models.Viewmodel.productlist>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Decsrepstoin</th>
+        <th>Quntity</th>
+        <th>Catageri</th>
+        <th>Action</th>
+
+    </tr>
+    @foreach (var i in Model)
+    {
+        <tr>
+            <td>@i.Id</td>
+            <td>@i.name</td>
+            <td>@i.Decs</td>
+            <td>@i.Quntety</td>
+            <td>@i.categari</td>
+            <td>
+                @Html.ActionLink("EDIT", "Edit","Home", new {Id=i.Id},null)
+            </td>
+        </tr>
+    }
+   
+<btn> @Html.ActionLink("Create", "create", "Home")</btn>
+
+</table>
+
